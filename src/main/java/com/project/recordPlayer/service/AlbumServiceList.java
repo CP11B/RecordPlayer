@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.project.recordPlayer.domain.Album;
 
-
 public class AlbumServiceList implements AlbumService{
 	
 	private List<Album> albums;
