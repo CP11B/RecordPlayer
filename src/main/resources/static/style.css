@@ -1,0 +1,9 @@
+.container {
+	padding-top: 3rem;
+}
+
+#floaty {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
