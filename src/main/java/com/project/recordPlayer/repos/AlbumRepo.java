@@ -7,7 +7,7 @@ import com.project.recordPlayer.domain.Album;
 
 
 @Repository
-	public interface AlbumRepo extends JpaRepository<Album, Long> {
-		Album findByTitle(String title);
-	}
+public interface AlbumRepo extends JpaRepository<Album, Long> {
+	Album findByTitle(String title);
+}
 

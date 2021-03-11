@@ -32,6 +32,26 @@ public class AlbumServiceList implements AlbumService{
 
 	@Override
 	public boolean removeAlbum(Long id) {
-		return this.albums.remove(id);
+		Album album = this.albums.get(id.intValue());
+		this.albums.remove(id.intValue());
+		return !this.albums.contains(album);
 	}
+	
+	
+	@Override
+	public Album updateAlbum(Long id, Album newAlbum) {
+		this.removeAlbum(id);
+		this.albums.add(id.intValue(), newAlbum);
+		return this.albums.get(id.intValue());
+	}
+
+	@Override
+	public Album getAlbumByTitle(String title) {
+		for (Album t : this.albums) {
+			if (t.getTitle().equals(title)) {
+				return t;
+			}
+		}
+		return null;
+	}	
 }

@@ -17,7 +17,8 @@ public class AlbumServiceDB implements AlbumService{
 
 	@Override
 	public Album createAlbum(Album album) {
-		return this.repo.save(album);
+		Album saved = this.repo.save(album);
+		return saved;
 	}
 
 	@Override
@@ -50,7 +51,7 @@ public class AlbumServiceDB implements AlbumService{
 		existing.setImgSrc(newAlbum.getImgSrc());
 		existing.setPlaySrc(newAlbum.getPlaySrc());
 		existing.setReleaseYear(newAlbum.getReleaseYear());
-		return this.repo.save(existing);
+		Album updated = this.repo.save(existing);
+		return updated;
 	}
-
 }
